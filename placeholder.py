@@ -98,10 +98,11 @@ def placeholder(request, width, height):
 
 def index(request):
     example = reverse('placeholder', kwargs={'width': 50, 'height': 50})
+    example2 = reverse('placeholder', kwargs={'width': 250, 'height': 250})
     context = {
-        'example': request.build_absolute_uri(example)
+        'example': request.build_absolute_uri(example),
+        'example2': request.build_absolute_uri(example2)
     }
-    # return HttpResponse(BASE_DIR)
     return render(request, 'home.html', context)
 
 
